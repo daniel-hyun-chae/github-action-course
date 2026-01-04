@@ -10,7 +10,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20.x"
-      - name: Install Dependencies
+      - name: Debug react-app folder
         run: |
-          cd 04-using-actions/react-app
-          npm ci
+          pwd
+          ls -lah
+          echo "---- package.json ----"
+          cat package.json
+          echo "---- package-lock.json ----"
+          ls -lah package-lock.json || echo "NO LOCK FILE"
+        working-directory: 04-using-actions/react-app
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: 04-using-actions/react-app

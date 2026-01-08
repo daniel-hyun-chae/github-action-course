@@ -13,7 +13,7 @@ jobs:
       - name: "[Debug] Print start-up data"
         if: ${{inputs.debug == true}}
         run: |
-          echo "Triggered by: $${{github.event_name}}"
+          echo "Triggered by: ${{github.event_name}}"
           echo "Branch: ${{github.action_ref}}"
           echo: "Commit SHA: ${{github.sha}}"
           echo: "Runner OS: ${{runner.os}}"

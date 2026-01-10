@@ -30,7 +30,7 @@ jobs:
   echo2:
     runs-on: ubuntu-latest
     env:
-      UNDEFINED_VAR_WITH_DEFAULT: ${{vars.UNDEFINED_VAR || 'default value'}}
+      UNDEFINED_VAR_WITH_DEFAULT: ${{vars.UNDEFINED_VAR && vars.UNDEFINED_VAR || 'default value'}}
     steps:
       - name: Print Variables
         run: |
